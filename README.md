@@ -1,4 +1,4 @@
-# Spring Web Client
+# Spring Boot Web Client
 
 ## 1. 설명
 Spring Web Client 예제이다. 포트는 8080을 사용하고 http://localhost:8080 API를 호출 한다.
