@@ -14,11 +14,17 @@ public class WebServiceImpl implements WebService {
     WebClient webClient;
 
     public WebDto getMono(WebDto webDto) {
-        return webClient.post()
+        return webClient.mutate()
+                .baseUrl("http://localhost:8080")
+                .build()
+                .post()
                 .uri("/board")
+                .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(webDto)
+//              .bodyValue(param)
                 .retrieve()
                 .bodyToMono(WebDto.class)
+//              .bodyToMono(String.class)
                 .block();
     }
 
