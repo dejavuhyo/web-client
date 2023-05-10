@@ -21,7 +21,6 @@ public class WebClientConfig implements WebFluxConfigurer {
     public WebClient webclient() {
         WebClient webClient = WebClient.builder()
                 .clientConnector(new ReactorClientHttpConnector(getHttpClient()))
-                .baseUrl("http://localhost:8081")
                 .defaultCookie("cookieKey", "cookieValue")
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .build();
