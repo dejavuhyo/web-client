@@ -15,7 +15,7 @@ public class WebServiceImpl implements WebService {
 
     public WebDto getMono(WebDto webDto) {
         return webClient.mutate()
-                .baseUrl("http://localhost:8080")
+                .baseUrl("http://localhost:8081")
                 .build()
                 .post()
                 .uri("/board")
@@ -30,7 +30,7 @@ public class WebServiceImpl implements WebService {
 
     public Flux<WebDto> getFlux() {
         return webClient.mutate()
-                .baseUrl("http://localhost:8080")
+                .baseUrl("http://localhost:8081")
                 .build()
                 .get()
                 .uri("/board")
