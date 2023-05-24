@@ -29,7 +29,10 @@ public class WebServiceImpl implements WebService {
     }
 
     public Flux<WebDto> getFlux() {
-        return webClient.get()
+        return webClient.mutate()
+                .baseUrl("http://localhost:8080")
+                .build()
+                .get()
                 .uri("/board")
                 .retrieve()
                 .bodyToFlux(WebDto.class);
